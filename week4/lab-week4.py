@@ -81,6 +81,8 @@ loot_options = ["Health Potion", "Poison Potion", "Secret Note", "Leather Boots"
 good_loot_options = ["Health Potion", "Leather Boots"]
 bad_loot_options = ["Poison Potion"]
 
+#lab04 Q4
+belt =[]
 #lab04
 #Define the Monster Power
 moster_powers={
@@ -151,6 +153,16 @@ print("Player rolled " + str(health_points) + " health points")
 input("Roll the dice for the monster's health points (Press enter)")
 m_health_points = random.choice(diceOptions)
 print("Player rolled " + str(m_health_points) + " health points for the monster")
+
+
+#Lab04 -05
+print("You find a loot bag! Look inside to find 2 items!")
+input("Roll for the first items (Press enter)")
+lootRoll = random.choice(range(1,len(loot_options)+1))
+loot = loot_options.pop(lootRoll-1)
+belt.append(loot)
+print("Your belt",belt)
+
 
 input("Analyze the roll (Press enter)")
 # Compare Player vs Monster's strength
