@@ -155,7 +155,7 @@ m_health_points = random.choice(diceOptions)
 print("Player rolled " + str(m_health_points) + " health points for the monster")
 
 
-#Lab04 -05
+#Lab04 -05 -item1
 print("You find a loot bag! Look inside to find 2 items!")
 input("Roll for the first items (Press enter)")
 lootRoll = random.choice(range(1,len(loot_options)+1))
@@ -163,7 +163,26 @@ loot = loot_options.pop(lootRoll-1)
 belt.append(loot)
 print("Your belt",belt)
 
+#Lab04 -06 -item2
+print("You find a loot bag! Look inside to find 2 items!")
+input("Roll for the first items (Press enter)")
+lootRoll = random.choice(range(1,len(loot_options)+1))
+loot = loot_options.pop(lootRoll-1)
+belt.append(loot)
+print("Your belt",belt)
 
+#lab04 -07 sort the belt
+belt.sort()
+print("Your belt items sorted as follow:",belt)
+
+#lab04-08 Use the belt
+print("You saw a Moster! Quickly use your first item!")
+first_item = belt.pop(0)
+if first_item in good_loot_options:
+    health_points = min(6, (health_points+2))
+elif first_item in bad_loot_options:
+    health_points = max(0,(health_points-2))
+    print("")
 input("Analyze the roll (Press enter)")
 # Compare Player vs Monster's strength
 print("--- You are matched in strength: " + str(combat_strength == m_combat_strength))
